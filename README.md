@@ -112,7 +112,7 @@ ejecutamos en la terminal **node src/registro-sistema.js**
 
 ya que ambos son modulos totalmente diferentes y estar en el mismo archivo daña el codigo
 
-actualizamos la mayoria de lineas de codigo con chalk(utilizamos los colores que el instructor nos indico)
+actualizamos la mayoria de lineas de codigo con chalk
 
 ej:
 
