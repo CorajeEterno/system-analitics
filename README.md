@@ -67,12 +67,20 @@ Predeterminada (con negrita): (chalk.cyan.bold('Texto'))
 
 # **App.js**
 
-- process.stdin.setEncoding('utf-8'): configura la entrada de la terminal para traducir los datos que escribe el usuario a texto legible en formato UTF-8.
+el usuario inicia mediante node src/app.js y te dara 4 opciones de cada modulo para ejecutar 1 vvez, tienes que volver a ejecutar node.
 
-- process.stdin.on('data', (data) => { ... }): abre un escuchador continuo que detecta cada vez que el usuario ingresa datos y presiona Enter.
+- **`console.clear();`**: Limpia por completo la pantalla de la terminal antes de mostrar el menú, eliminando cualquier texto o comando anterior para que todo se vea ordenado.
 
-- const input = data.trim(): toma el texto capturado y elimina los espacios en blanco o saltos de línea sobrantes al inicio y al final.
+- **`process.stdout.write(...)`**: A diferencia de `console.log`, imprime texto en la pantalla **sin agregar un salto de línea automático al final**. Esto evita que el cursor salte de línea y se mantenga justo al lado del texto esperando que escribas.
 
+- **`process.stdin.resume();`**: Le ordena explícitamente a Node.js que mantenga el canal de entrada del teclado activo y abierto, obligando a la terminal a detenerse y esperar a que el usuario presione una tecla.
+
+
+- **`process.stdin.once('data', ...)`**: Es un escuchador de eventos de un solo uso (`once`). Significa que va a capturar lo que escribamos **exactamente una sola vez** y luego se desactivará automáticamente para evitar que se quede escuchando de forma infinita.
+
+- **`data.trim()`**: Toma el texto que escribimos en la terminal y le **elimina los espacios vacíos o saltos de línea invisibles** (como el *Enter* que presionas al final), dejando solo el número limpio (por ejemplo, convierte `"1\n"` en `"1"`).
+
+* **`process.stdin.pause();`**: Cierra o suspende temporalmente la escucha del teclado inmediatamente después de capturar mi opción, liberando el proceso para que la terminal vuelva a su comportamiento normal.
 
 # **src/cli-tool.js**
 
@@ -82,11 +90,11 @@ introducimos el codigo, añadimos estilo con chalk.
 
 ej:
 
-- export default function ejecutarCli(): exporta esta función completa para que pueda ser importada y ejecutada desde otro archivo principal.
+- **`export default function ejecutarCli():`** exporta esta función completa para que pueda ser importada y ejecutada desde otro archivo principal.
 
-- process.uptime(): calcula el tiempo exacto en segundos que lleva corriendo el proceso actual de Node.js en la terminal.
+- **`process.uptime():`** calcula el tiempo exacto en segundos que lleva corriendo el proceso actual de Node.js en la terminal.
 
-- process.exit(0): detiene y cierra por completo la ejecución del programa de forma limpia.
+- **`process.exit(0):`** detiene y cierra por completo la ejecución del programa de forma limpia.
 
 
 # **src/registro-sistema.js**
@@ -97,11 +105,15 @@ introducimos el codigo y damos estilo a la terminal con chalk
 
 ej:
 
-- console.time cuenta el tiempo desde el inicio que ejecuta el script y console.timeEnd es el final del cronometro cuando el script termina.
-- console.count es una funcion avanzada, cada vez que el usuario pasa por aqui se lleva la cuenta.
-- console.warn: manda un mensaje de advertencia.
-- console.error manda un mensaje de error critico en el sistema cuando hay fallos.
-- console.table(usuarios) toma los objetos y los mete en una tabla.
+- **`console.time:`** cuenta el tiempo desde el inicio que ejecuta el script y console.timeEnd es el final del cronometro cuando el script termina.
+
+- **`console.count:`** es una funcion avanzada, cada vez que el usuario pasa por aqui se lleva la cuenta.
+
+- **`console.warn:`** manda un mensaje de advertencia.
+
+- **`console.error:`** manda un mensaje de error critico en el sistema cuando hay fallos.
+
+- **`console.table(usuarios):`** toma los objetos y los mete en una tabla.
 
 
 ejecutamos en la terminal **node src/registro-sistema.js**
@@ -116,12 +128,17 @@ actualizamos la mayoria de lineas de codigo con chalk
 
 ej:
 
-- `import os from 'os'`: importa el módulo nativo de Node.js para extraer información del sistema operativo de la computadora.
-- `os.platform()` y `os.arch()`: detectan el sistema operativo actual (ej. Windows, Linux) y su arquitectura de procesamiento (ej. x64).
-- `os.cpus()`: extrae los detalles del procesador, permitiendo consultar el modelo del primer núcleo con `[0].model` y la cantidad total de núcleos con `.length`.
-- `os.freemem()` y `os.totalmem()`: consultan la memoria RAM libre y total del equipo en bytes (se dividen entre $1024 \times 1024$ para transformarlos a Megabytes).
-- `os.uptime()`: obtiene el tiempo total que lleva encendida la computadora en segundos
-- `os.userInfo().username`: recupera el nombre de usuario de la sesión actual del sistema operativo.
+- **`import os from 'os'`:** importa el módulo nativo de Node.js para extraer información del sistema operativo de la computadora.
+
+- **`os.platform()` y `os.arch()`**: detectan el sistema operativo actual (ej. Windows, Linux) y su arquitectura de procesamiento (ej. x64).
+
+- **`os.cpus()`:** extrae los detalles del procesador, permitiendo consultar el modelo del primer núcleo con `[0].model` y la cantidad total de núcleos con `.length`.
+
+- **`os.freemem()` y `os.totalmem()`:** consultan la memoria RAM libre y total del equipo en bytes (se dividen entre $1024 \times 1024$ para transformarlos a Megabytes).
+
+- **`os.uptime()`:** obtiene el tiempo total que lleva encendida la computadora en segundos.
+
+- **`os.userInfo().username`:** recupera el nombre de usuario de la sesión actual del sistema operativo.
 
 
 # ahora iniciamos **git y githud**

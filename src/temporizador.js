@@ -1,7 +1,6 @@
 import chalk from 'chalk';
 
-
-export default function ejecutarCli() {
+export default function temporizador() {
     let segundos = 0;
 
     const intervalId = setInterval(() => {

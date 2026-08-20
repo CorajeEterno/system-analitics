@@ -9,9 +9,10 @@ export default function registroSistema() {
     console.count(chalk.blue(`👤 Acceso de usuario ${usuario}`));
   }
 
-  accesoUsuario('Carlos');
+  accesoUsuario('Luis');
   accesoUsuario('Ana');
   accesoUsuario('Carlos');
+  accesoUsuario('muriel');
 
   console.warn(chalk.hex('#FFA500').bold('⚠️ Capacidad de usuarios alcanzando el límite'));
 
@@ -19,7 +20,9 @@ export default function registroSistema() {
 
   const usuarios = [
     { nombre: "Carlos", rol: "Admin" },
-    { nombre: "Ana", rol: "User" }
+    { nombre: "Ana", rol: "User" },
+    { nombre: "luis", rol: "User"},
+    { nombre: "murie", rol:"admin"}
   ];
 
   console.log(chalk.cyan.bold('\n📋 Lista de usuarios conectados:'));
@@ -30,4 +33,3 @@ export default function registroSistema() {
   console.log(chalk.green.bold('\n=== Fin del sistema ==='));
 }
 
-registroSistema();

@@ -20,4 +20,3 @@ export default function mostrarInformacion() {
   console.log(chalk.green('========================\n'));
 }
 
-mostrarInformacion();
