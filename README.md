@@ -140,6 +140,13 @@ ej:
 
 - **`os.userInfo().username`:** recupera el nombre de usuario de la sesión actual del sistema operativo.
 
+# **temporizador.js**
+
+- **`setInterval:`** Repite una acción automáticamente cada 1 segundo.
+
+- **`segundos++:`** Suma 1 al contador en cada repetición para llevar la cuenta del tiempo.
+
+- **`clearInterval:`** Detiene el ciclo por completo cuando el contador llega a 10.
 
 # ahora iniciamos **git y githud**
 
