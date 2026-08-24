@@ -31,5 +31,6 @@ export default function registroSistema() {
   console.timeEnd(chalk.yellow('⏱️ ProcesoPrincipal'));
 
   console.log(chalk.green.bold('\n=== Fin del sistema ==='));
+  process.exit(0);
 }
 

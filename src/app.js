@@ -11,7 +11,6 @@ console.log(chalk.white('2. Ejecutar Registro del Sistema'));
 console.log(chalk.white('3. Ejecutar Monitor de Sistema (OS)'));
 console.log(chalk.white('4. Ejecutar Temporizador'));
 
-
 process.stdout.write(chalk.cyan('\nElige una opción (1-4): '));
 
 process.stdin.resume();
@@ -19,7 +18,7 @@ process.stdin.setEncoding('utf-8');
 
 process.stdin.once('data', (data) => {
   const input = data.trim();
-  process.stdin.pause(); 
+  
 
   console.log('');
   switch (input) {

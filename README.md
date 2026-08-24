@@ -80,7 +80,7 @@ el usuario inicia mediante node src/app.js y te dara 4 opciones de cada modulo p
 
 - **`data.trim()`**: Toma el texto que escribimos en la terminal y le **elimina los espacios vacíos o saltos de línea invisibles** (como el *Enter* que presionas al final), dejando solo el número limpio (por ejemplo, convierte `"1\n"` en `"1"`).
 
-* **`process.stdin.pause();`**: Cierra o suspende temporalmente la escucha del teclado inmediatamente después de capturar mi opción, liberando el proceso para que la terminal vuelva a su comportamiento normal.
+- **`process.exit(0);`**: finaliza el proceso llevado en la terminal. 
 
 # **src/cli-tool.js**
 

@@ -10,6 +10,7 @@ export default function temporizador() {
         if (segundos >= 10) {
             clearInterval(intervalId);
             console.log(chalk.green.bold('¡Listo! Finalizó el temporizador'));
+            process.exit(0);   
         }
     }, 1000);
 }

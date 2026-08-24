@@ -18,5 +18,6 @@ export default function mostrarInformacion() {
   console.log(chalk.blue(`Usuario: ${os.userInfo().username}`));
   
   console.log(chalk.green('========================\n'));
+  process.exit(0);
 }
 
