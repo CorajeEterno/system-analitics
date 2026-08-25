@@ -4,7 +4,7 @@ import registroSistema from './registro-sistema.js';
 import mostrarInformacion from './system-monitor.js';
 import temporizador from './temporizador.js';
 
-console.clear();
+
 console.log(chalk.green.bold('=== 🚀 MENÚ INTEGRADOR PRINCIPAL ==='));
 console.log(chalk.white('1. Ejecutar CLI interactiva'));
 console.log(chalk.white('2. Ejecutar Registro del Sistema'));

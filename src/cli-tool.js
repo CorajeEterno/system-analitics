@@ -4,6 +4,8 @@ export default function ejecutarCli() {
   console.log(chalk.green.bold('Bienvenido a la CLI de ejemplo'));
   console.log(chalk.green('Comandos disponibles: ') + chalk.cyan('hola, tiempo, salir'));
 
+  process.stdout.write(chalk.cyan('\nescribe los comandos disponibles: '));
+
   process.stdin.setEncoding('utf-8');
   process.stdin.on('data', (data) => {
     const input = data.trim().toLowerCase();
